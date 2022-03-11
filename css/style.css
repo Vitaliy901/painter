@@ -1,0 +1,93 @@
+html    {
+    font-size: 20px;
+}
+::selection {
+    background-color: black;
+    color: white;
+    text-shadow: 1px 1px  rgba(24, 209, 255, 0.712);
+}
+body {
+	position: relative;
+
+	overflow: hidden;
+}
+/* =====position - size===== */
+main {
+	min-height: 100vh;
+	max-width: 1400px;
+	width: 100%;
+	margin: 0 auto;
+	display: flex;
+	align-items: center;
+}
+.board {
+	height: inherit;
+	flex: 1 1;
+}
+canvas {
+	margin: 0 auto;
+	display: block;
+	background-color: rgb(248, 248, 228);
+	border-radius: 0.5rem;
+	box-shadow: 0 0 2rem 1rem rgb(134, 133, 133);
+	border-top: 0.75rem solid rgb(92, 68, 24);
+	border-bottom: 0.75rem solid rgb(92, 68, 24);
+}
+.menu {
+	align-self: center;
+}
+.menu input {
+	display: block;
+	width: 100%;
+}
+.hue {
+	height: 200px;
+	width: 200px;
+	border-radius: 50%;
+	background-color: blueviolet;
+	margin: 1rem 0;
+}
+.rubber {
+	height: 100px;
+	width: 100px;
+	background-image: url(../img/rubber.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+/* ============================================== */
+@media (min-width: 200px) and (max-width: 600px) {
+    /* Свойства применяются в пределах от меньшего к большему. */
+}
+
+@media (orientation: portrait) {
+    /* Если высота экрана больше ширины, свойство применяется */
+}
+@media (orientation: landscape) {
+    /* Если ширина экрана больше высоты, свойство применяется */
+}
+@import url("main.css") (min-width:481px) and (max-width:768px); 
+/* импортируем содержимое файла css, который предназначается для устройств с 
+разрешением экрана, находящегося в диапозоне от 481 пикселей до 768 пикселей */
+
+
+/*  320px — 480px: мобильные устройства;
+    481px — 768px: планшеты;
+    769px — 1024px: маленькие экраны, ноутбуки;
+    1025px — 1200px: большие экраны;
+    1201px и больше —  очень большие экраны, телевизоры. */
+
+
+    /* для поддержки старых версий браузера Mozilla */
+@-moz-keyframes growElement { 
+	/* ключевые кадры */
+}
+
+/* для поддержки старых версий браузеров Chrome, Opera, Safari */
+@-webkit-keyframes growElement { 
+	/* ключевые кадры */
+}
+/* браузер Internet Explorer. */
+@-ms-keyframes growElement { 
+	/* ключевые кадры */
+}
