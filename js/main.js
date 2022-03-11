@@ -4,6 +4,7 @@ let menu = document.querySelector('.menu')
 let range = document.querySelector('[name=range]')
 let hue = document.querySelector('.hue')
 let rubber = document.querySelector('.rubber')
+let brush= document.querySelector('.brush')
 let canvas = document.querySelector('canvas')
 let context = canvas.getContext('2d')
 
@@ -47,10 +48,9 @@ canvas.addEventListener('mouseup', function (e) {
 	bool = false;
 })
 canvas.addEventListener('mousemove', function (e) {
-
 	let x = e.pageX - (Number.parseInt(getComputedStyle(canvas).marginLeft) + Number.parseInt(getComputedStyle(main).marginLeft));
 	let y = e.pageY - (this.offsetTop + Number.parseInt(getComputedStyle(canvas).borderTop));
-	rubber.textContent = x + ':' + y
+
 	if (bool) {
 		if (rubberFlag) {
 			console.log('!')
@@ -67,6 +67,12 @@ canvas.addEventListener('mousemove', function (e) {
 })
 // ===============rubber===========
 rubber.addEventListener('click', function (e) {
-	rubberFlag = !rubberFlag;
-	console.log(rubberFlag )
+	rubberFlag = true;
+	rubber.classList.add('rubber_active')
+	brush.classList.remove('brush_active')
+})
+brush.addEventListener('click', function (e) {
+	rubberFlag = false;
+	rubber.classList.remove('rubber_active')
+	brush.classList.add('brush_active')
 })
