@@ -41,7 +41,7 @@ canvas.addEventListener('mousedown', function (e) {
 			context.arc(xv,yv,rangeV,0,getRadians(360))
 		}
 	}
-	context.fillStyle = 'green'
+	context.fillStyle = '#f4b916'
 	context.fill()
 })
 canvas.addEventListener('mouseup', function (e) {
@@ -62,7 +62,7 @@ canvas.addEventListener('mousemove', function (e) {
 			context.arc(x,y,rangeV,0,getRadians(360))
 		}	
 	}
-	context.fillStyle = 'green'
+	context.fillStyle = '#f4b916'
 	context.fill()
 })
 // ===============rubber===========

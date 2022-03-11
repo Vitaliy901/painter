@@ -53,6 +53,7 @@ canvas {
 }
 .rubber, .brush {
 	cursor: pointer;
+	border-radius: 0.2rem;
 }
 .rubber {
 	height: 100px;
