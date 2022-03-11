@@ -55,7 +55,7 @@ canvas.addEventListener('mousemove', function (e) {
 		if (rubberFlag) {
 			console.log('!')
 			context.beginPath()
-			context.clearRect(x - 10,y - 10,rangeV,rangeV)
+			context.clearRect(x - rangeV / 2,y - rangeV / 2,rangeV,rangeV)
 		} else {
 			context.arc(x,y,rangeV,0,getRadians(360))
 			context.beginPath()
