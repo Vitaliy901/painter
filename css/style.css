@@ -44,7 +44,6 @@ main {
 	display: block;
 	border-radius: 50%;
 	margin: 1rem 0;
-	border: 1px solid black;
 	box-shadow: 0 0 2rem 0.5rem rgb(112, 112, 112);
 }
 /*========= tools============ */

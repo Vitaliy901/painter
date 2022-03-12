@@ -18,11 +18,21 @@ let xv = 0;
 let yv = 0;
 let rangeV = range.value = 20;
 let rubberFlag = false;
+let color = '';
+let imageData;
 // ======================RGB=====================
 let img = new Image();
 img.src = '../img/circle-hue.png'
 img.addEventListener('load', function (e) {
-	contextRGB.drawImage(img, 0,0, 200,200)
+	contextRGB.drawImage(img, 0,0, hue.width,hue.height)
+})
+hue.addEventListener('mousemove', function (e) {
+	xv = e.pageX - (Number.parseInt(getComputedStyle(main).marginLeft) + board.offsetWidth);
+	yv = e.pageY - hue.offsetTop;
+	imageData = contextRGB.getImageData(xv,yv,1,1)
+})
+hue.addEventListener('click', function (e) {
+	color = `rgba(${imageData.data[0]}, ${imageData.data[1]}, ${imageData.data[2]}, ${imageData.data[3]})`;
 })
 
 // ======================canvas====================
@@ -48,7 +58,7 @@ canvas.addEventListener('mousedown', function (e) {
 			context.arc(xv,yv,rangeV,0,getRadians(360))
 		}
 	}
-	context.fillStyle = 'rgb(255,255,000)'
+	context.fillStyle = color
 	context.fill()
 })
 canvas.addEventListener('mouseup', function (e) {
@@ -62,14 +72,17 @@ canvas.addEventListener('mousemove', function (e) {
 		if (rubberFlag) {
 			context.beginPath()
 			context.clearRect(x - rangeV / 2,y - rangeV / 2,rangeV,rangeV)
+			context.fillStyle = color
+			context.fill()
 		} else {
 			context.arc(x,y,rangeV,0,getRadians(360))
 			context.beginPath()
 			context.arc(x,y,rangeV,0,getRadians(360))
+			context.fillStyle = color
+			context.fill()
 		}	
 	}
-	context.fillStyle = 'rgb(255,255,000)'
-	context.fill()
+	
 })
 // ===============rubber===========
 rubber.addEventListener('click', function (e) {
