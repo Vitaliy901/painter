@@ -22,10 +22,11 @@ let color = '';
 let imageData;
 // ======================RGB=====================
 let img = new Image();
+img.src = '../img/circle-hue.png'
 img.addEventListener('load', function (e) {
 	contextRGB.drawImage(img, 0,0, hue.width,hue.height)
 })
-img.src = '../img/circle-hue.png'
+
 
 hue.addEventListener('mousemove', function (e) {
 	xv = e.pageX - (Number.parseInt(getComputedStyle(main).marginLeft) + board.offsetWidth);
