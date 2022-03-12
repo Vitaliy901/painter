@@ -22,7 +22,7 @@ let color = '';
 let imageData;
 // ======================RGB=====================
 let img = new Image();
-img.src = '../img/circle-hue.png'
+img.src = '/img/circle-hue.png'
 img.addEventListener('load', function (e) {
 	contextRGB.drawImage(img, 0,0, hue.width,hue.height)
 })
