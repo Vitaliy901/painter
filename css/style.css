@@ -24,7 +24,7 @@ main {
 	height: inherit;
 	flex: 1 1;
 }
-canvas {
+.main-canvas{
 	margin: 0 auto;
 	display: block;
 	background-color: rgb(251, 251, 216);
@@ -41,15 +41,16 @@ canvas {
 	width: 100%;
 }
 .hue {
-	height: 200px;
-	width: 200px;
+	display: block;
 	border-radius: 50%;
-	background-color: blueviolet;
 	margin: 1rem 0;
+	border: 1px solid black;
+	box-shadow: 0 0 2rem 0.5rem rgb(112, 112, 112);
 }
 /*========= tools============ */
 .wrapper-tools {
 	display: flex;
+
 }
 .rubber, .brush {
 	cursor: pointer;

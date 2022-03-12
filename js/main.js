@@ -7,6 +7,7 @@ let rubber = document.querySelector('.rubber')
 let brush= document.querySelector('.brush')
 let canvas = document.querySelector('canvas')
 let context = canvas.getContext('2d')
+let contextRGB = hue.getContext('2d')
 
 function getRadians(degrees) {
 	return (Math.PI / 180) * degrees;
@@ -17,6 +18,13 @@ let xv = 0;
 let yv = 0;
 let rangeV = range.value = 20;
 let rubberFlag = false;
+// ======================RGB=====================
+let img = new Image();
+img.src = '../img/circle-hue.png'
+img.addEventListener('load', function (e) {
+	contextRGB.drawImage(img, 0,0, 200,200)
+})
+
 // ======================canvas====================
 range.addEventListener('change', function (e) {
 	rangeV = range.value
@@ -32,7 +40,6 @@ canvas.addEventListener('mousedown', function (e) {
 	yv = e.pageY - (this.offsetTop + Number.parseInt(getComputedStyle(canvas).borderTop));
 	if (bool) {
 		if (rubberFlag) {
-			console.log('!')
 			context.beginPath()
 			context.clearRect(xv - rangeV / 2,yv - rangeV / 2,rangeV,rangeV)
 		} else {
@@ -41,7 +48,7 @@ canvas.addEventListener('mousedown', function (e) {
 			context.arc(xv,yv,rangeV,0,getRadians(360))
 		}
 	}
-	context.fillStyle = '#f4b916'
+	context.fillStyle = 'rgb(255,255,000)'
 	context.fill()
 })
 canvas.addEventListener('mouseup', function (e) {
@@ -53,7 +60,6 @@ canvas.addEventListener('mousemove', function (e) {
 
 	if (bool) {
 		if (rubberFlag) {
-			console.log('!')
 			context.beginPath()
 			context.clearRect(x - rangeV / 2,y - rangeV / 2,rangeV,rangeV)
 		} else {
@@ -62,7 +68,7 @@ canvas.addEventListener('mousemove', function (e) {
 			context.arc(x,y,rangeV,0,getRadians(360))
 		}	
 	}
-	context.fillStyle = '#f4b916'
+	context.fillStyle = 'rgb(255,255,000)'
 	context.fill()
 })
 // ===============rubber===========
