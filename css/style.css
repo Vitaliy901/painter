@@ -46,6 +46,9 @@ main {
 	margin: 1rem 0;
 	box-shadow: 0 0 2rem 0.5rem rgb(112, 112, 112);
 }
+.img-hue {
+	display: none;
+}
 /*========= tools============ */
 .wrapper-tools {
 	display: flex;

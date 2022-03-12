@@ -3,6 +3,7 @@ let board = document.querySelector('.board')
 let menu = document.querySelector('.menu')
 let range = document.querySelector('[name=range]')
 let hue = document.querySelector('.hue')
+let img_hue = document.querySelector('.img-hue')
 let rubber = document.querySelector('.rubber')
 let brush= document.querySelector('.brush')
 let canvas = document.querySelector('canvas')
@@ -21,10 +22,11 @@ let rubberFlag = false;
 let color = '';
 let imageData;
 // ======================RGB=====================
-let img = new Image();
-img.src = '../img/circle-hue.png'
-img.addEventListener('load', function (e) {
-	contextRGB.drawImage(img, 0,0, hue.width,hue.height)
+// let img = new Image();
+// img.src = '../img/circle-hue.png'
+window.addEventListener('load', function (e) {
+	contextRGB.drawImage(img_hue, 0,0, hue.width,hue.height)
+	console.log(img_hue)
 })
 
 
